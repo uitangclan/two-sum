@@ -1,6 +1,6 @@
 fun main (){
-    val nums = intArrayOf(2,7,11,15)
-    val target = 9
+    val nums = intArrayOf(3,2,4)
+    val target = 6
     println(twoSum(nums, target).contentToString())
 }
 
@@ -11,7 +11,7 @@ fun twoSum(nums: IntArray, target: Int):IntArray {
     }
     for (i in nums.indices) {
         var j = target - nums[i]
-        if (map.containsKey(j)) {
+        if (map.containsKey(j) && map.get(j) != i) {
             return intArrayOf(i, map.get(j)!!) 
         }
     }
